@@ -7,6 +7,18 @@ La idea principal de Source es que "Todo tiene un origen" (o fuente).
 
 Esta guía describe las características reconocidas por el lexer, el parser y el intérprete actuales.
 
+## Información adicional
+
+| Detalle | Información |
+|---|---|
+| Versión | 0.8 |
+| Autor | Randommatix |
+
+## Licencia
+
+Source está distribuido bajo la licencia Apache License 2.0.
+Consulta el archivo [LICENSE](LICENSE) para obtener más información.
+
 ---
 
 ## 1. Estructura de un programa
@@ -447,7 +459,8 @@ random main() {
 
 Este programa inicializa la semilla a partir de la representación de la propia fuente `random`, genera un número entero entre `1` y `8` y lo multiplica por `10`.
 
-Siempre deberías usar `starts()` directamente asi:
+Para inicializar el generador, utiliza esta expresión:
+
 `random.starts("%s" % random)`
 
 ---
