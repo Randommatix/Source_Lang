@@ -1,0 +1,99 @@
+#!import string
+
+* random {
+    seed = 0
+
+    strings fmt_pref(s, n) {
+        return "%." + str(n) + "s"
+    }
+
+    * prefijo(s, n) {
+        return fmt_pref(s, n) % s
+    }
+
+    * es_char_en(s, i, c) {
+        return prefijo(s, i + 1) == prefijo(s, i) + c
+    }
+
+    strings strlen(s) {
+        return len(s)
+    }
+
+    * hex_digit(s, i) {
+        if es_char_en(s, i, "0"):
+            return 0
+        if es_char_en(s, i, "1"):
+            return 1
+        if es_char_en(s, i, "2"):
+            return 2
+        if es_char_en(s, i, "3"):
+            return 3
+        if es_char_en(s, i, "4"):
+            return 4
+        if es_char_en(s, i, "5"):
+            return 5
+        if es_char_en(s, i, "6"):
+            return 6
+        if es_char_en(s, i, "7"):
+            return 7
+        if es_char_en(s, i, "8"):
+            return 8
+        if es_char_en(s, i, "9"):
+            return 9
+        if es_char_en(s, i, "a"):
+            return 10
+        if es_char_en(s, i, "b"):
+            return 11
+        if es_char_en(s, i, "c"):
+            return 12
+        if es_char_en(s, i, "d"):
+            return 13
+        if es_char_en(s, i, "e"):
+            return 14
+        if es_char_en(s, i, "f"):
+            return 15
+
+        return -1
+    }
+
+    * hex_to_dec(s, i, n, result) {
+        if i >= n:
+            return result
+
+        digit = hex_digit(s, i)
+
+        if digit < 0:
+            return result
+
+        return hex_to_dec(s, i + 1, n, result * 16 + digit)
+    }
+
+    * find_address(s, i, n) {
+        if i + 1 >= n:
+            return 0
+
+        if es_char_en(s, i, "0") && es_char_en(s, i + 1, "x"):
+            return hex_to_dec(s, i + 2, n, 0)
+
+        return find_address(s, i + 1, n)
+    }
+
+    * starts(representation) {
+        seed = find_address(representation, 0, strlen(representation)) % 2147483647
+        return seed
+    }
+
+    * randint(a, b) {
+        seed = (seed * 1103515245 + 12345) % 2147483647
+        return a + (seed % (b - a + 1))
+    }
+
+    expose("iniciar")
+    expose("randint")
+    expose("var: seed")
+}
+
+(random) main() {
+    random.starts("%s" % random)
+    return random.randint(1, 8) * 10
+}

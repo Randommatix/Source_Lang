@@ -1,0 +1,29 @@
+* strings {
+  * str(n) {
+    return "%d" % n
+  }
+  expose("str")
+  * len_aux(s, n, lo, hi) {
+    if lo < 0:
+      if (("%." + str(n) + "s") % s) == s:
+        return len_aux(s, n, 0, n)
+      return len_aux(s, n * 2, -1, -1)
+
+    if hi - lo <= 1:
+      return hi
+
+    if (("%." + str((lo + hi) / 2) + "s") % s) == s:
+      return len_aux(s, n, lo, (lo + hi) / 2)
+
+    return len_aux(s, n, (lo + hi) / 2, hi)
+  }
+  * len(s) {
+     return len_aux(s, 1, -1, -1)
+  }
+  expose("len")
+}
+
+strings main() {
+  return len("Hola")
+}
+
