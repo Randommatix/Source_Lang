@@ -155,7 +155,8 @@ class Interpreter:
                 base / f"{module}.rl",
                 base / f"{module}.rnl",
                 base / f"{module}.src",
-                base / f"{module}.fnt"
+                base / f"{module}.fnt",
+                base / f"libraries/{module}.fnt"
             ]
 
             path = next(
