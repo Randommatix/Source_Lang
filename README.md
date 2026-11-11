@@ -14,6 +14,16 @@ Esta guía describe las características reconocidas por el lexer, el parser y e
 | Versión | 0.8 |
 | Autor | Randommatix |
 
+## Ejecutar Source
+
+Desde donde este `main.py`, puedes ejecutar:
+
+``` bash
+python main.py programa.fnt
+```
+
+Reemplaza `programa.fnt` por el nombre real del archivo.
+
 ## Licencia
 
 Source está distribuido bajo la licencia Apache License 2.0.
@@ -462,6 +472,12 @@ Este programa inicializa la semilla a partir de la representación de la propia 
 Para inicializar el generador, utiliza esta expresión:
 
 `random.starts("%s" % random)`
+
+Esto permite obtener una dirección hexadecimal de la representación
+del objeto `random`, que se utiliza para inicializar la semilla.
+
+Es necesario ejecutar esta instrucción porque la biblioteca no puede
+obtener esa representación hexadecimal por sí sola.
 
 ---
 
