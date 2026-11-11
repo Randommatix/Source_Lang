@@ -1,0 +1,26 @@
+* math {
+  * sumar(a, b) {
+    return a + b
+  }
+  * cuadrado(a) {
+    return a * a
+  }
+  * promedio(a, b) {
+    return (a + b) / 2
+  }
+  * porcentaje(valor, porcentaje) {
+    return valor * porcentaje / 100
+  }
+  * cubo(a) {
+    return a * a * a
+  }
+  expose("sumar")
+  expose("cuadrado")
+  expose("promedio")
+  expose("porcentaje")
+  expose("cubo")
+}
+
+math main() {
+  return cubo(3)
+}
