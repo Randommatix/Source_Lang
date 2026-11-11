@@ -3,6 +3,8 @@
 
 Source es un lenguaje de programación interpretado. Su sintaxis utiliza fuentes, funciones, variables y expresiones. Los bloques se delimitan con llaves `{ }`, mientras que algunas estructuras utilizan indentación.
 
+La idea principal de Source es que "Todo tiene un origen" (o fuente).
+
 Esta guía describe las características reconocidas por el lexer, el parser y el intérprete actuales.
 
 ---
@@ -423,7 +425,7 @@ Proporciona funciones para generar números pseudoaleatorios. Depende de la bibl
 
 | Función | Descripción |
 |---|---|
-| `iniciar(representation)` | Inicializa la semilla (`seed`) a partir de la representación textual de un objeto. Extrae la dirección hexadecimal contenida en `representation` y la usa como semilla. Devuelve la semilla calculada. |
+| `starts(representation)` | Inicializa la semilla (`seed`) a partir de la representación textual de un objeto. Extrae la dirección hexadecimal contenida en `representation` y la usa como semilla. Devuelve la semilla calculada. |
 | `randint(a, b)` | Devuelve un número entero pseudoaleatorio en el rango cerrado `[a, b]`. Actualiza la semilla interna en cada llamada. |
 
 **Variable expuesta:**
@@ -438,14 +440,15 @@ Proporciona funciones para generar números pseudoaleatorios. Depende de la bibl
 #!import random
 
 random main() {
-    random.iniciar("%s" % random)
+    random.starts("%s" % random)
     return random.randint(1, 8) * 10
 }
 ```
 
 Este programa inicializa la semilla a partir de la representación de la propia fuente `random`, genera un número entero entre `1` y `8` y lo multiplica por `10`.
-Siempre deberías usar `iniciar()` directamente asi:
-`random.iniciar("%s" % random)`
+
+Siempre deberías usar `starts()` directamente asi:
+`random.starts("%s" % random)`
 
 ---
 
