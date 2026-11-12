@@ -1,4 +1,4 @@
-* strings {
+* string {
   * str(n) {
     return "%d" % n
   }
@@ -23,7 +23,7 @@
   expose("len")
 }
 
-strings main() {
+string main() {
   return len("Hola")
 }
 
