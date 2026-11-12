@@ -408,7 +408,7 @@ Proporciona utilidades para el manejo de cadenas de texto.
 ```c
 #!import string
 
-strings main() {
+string main() {
   return len("Hola")
 }
 ```
