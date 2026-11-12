@@ -3,7 +3,7 @@
 * random {
     seed = 0
 
-    strings fmt_pref(s, n) {
+    string fmt_pref(s, n) {
         return "%." + str(n) + "s"
     }
 
@@ -15,7 +15,7 @@
         return prefijo(s, i + 1) == prefijo(s, i) + c
     }
 
-    strings strlen(s) {
+    string strlen(s) {
         return len(s)
     }
 
@@ -88,7 +88,7 @@
         return a + (seed % (b - a + 1))
     }
 
-    expose("iniciar")
+    expose("starts")
     expose("randint")
     expose("var: seed")
 }
