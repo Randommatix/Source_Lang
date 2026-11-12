@@ -9,12 +9,14 @@ Esta guía describe las características reconocidas por el lexer, el parser y e
 
 ## Información adicional
 
+### Detalles
+
 | Detalle | Información |
 |---|---|
 | Versión | 0.8 |
 | Autor | Randommatix |
 
-## Ejecutar Source
+### Ejecutar Source
 
 Desde donde este `main.py`, puedes ejecutar:
 
@@ -24,7 +26,7 @@ python main.py programa.fnt
 
 Reemplaza `programa.fnt` por el nombre real del archivo.
 
-## Licencia
+### Licencia
 
 Source está distribuido bajo la licencia Apache License 2.0.
 Consulta el archivo [LICENSE](LICENSE) para obtener más información.
