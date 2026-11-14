@@ -402,7 +402,7 @@ Proporciona utilidades para el manejo de cadenas de texto.
 |---|---|
 | `str(n)` | Convierte un número `n` a su representación como cadena de texto. |
 | `len(s)` | Devuelve la longitud de la cadena `s`. |
-| `firts(s, n)` | Devuelve los primeros `n` caracteres de la cadena `s`. |
+| `firsts(s, n)` | Devuelve los primeros `n` caracteres de la cadena `s`. |
 
 **Ejemplo de uso:**
 
