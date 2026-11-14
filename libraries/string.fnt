@@ -21,6 +21,10 @@
      return len_aux(s, 1, -1, -1)
   }
   expose("len")
+  * firsts(s, n) {
+    return ("%." + str(n) + "s") % s
+  }
+  expose("firsts")
 }
 
 string main() {
