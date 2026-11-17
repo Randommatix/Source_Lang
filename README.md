@@ -482,6 +482,54 @@ del objeto `random`, que se utiliza para inicializar la semilla.
 Es necesario ejecutar esta instrucción porque la biblioteca no puede
 obtener esa representación hexadecimal por sí sola.
 
+### 12.4. Biblioteca `stack`
+
+Proporciona una estructura de datos de tipo pila (*Stack*), que permite almacenar y recuperar elementos siguiendo el principio LIFO (*Last In, First Out*), es decir, el último elemento en entrar es el primero en salir.
+
+**Funciones expuestas:**
+
+| Función | Descripción |
+|---|---|
+| `push(value)` | Añade `value` a la cima de la pila. Devuelve `true` si se añadió correctamente o `false` si la pila está llena. |
+| `pop()` | Extrae y devuelve el elemento de la cima de la pila. Devuelve `None` si está vacía. |
+| `peek()` | Devuelve el elemento de la cima sin extraerlo. Devuelve `None` si está vacía. |
+| `size()` | Devuelve la **cantidad** de elementos almacenados. |
+| `is_empty()` | Devuelve `true` si la pila está vacía o `false` en caso contrario. |
+
+**Características:**
+
+- Capacidad máxima de 10 elementos.
+- Sigue el principio LIFO.
+- Permite insertar, consultar y extraer elementos.
+- No permite extraer elementos de una pila vacía.
+- No permite insertar elementos cuando alcanza su capacidad máxima.
+
+**Ejemplo de uso:**
+
+```c
+#!import stack
+#!import string
+
+(string, stack) main() {
+    stack.push(10)
+    stack.push(20)
+    stack.push(30)
+
+    return "Size: " + str(stack.size()) + "\nTop: " + str(stack.peek()) + "\nPop: " + str(stack.pop()) + "\nTop: " + str(stack.peek())
+}
+```
+
+Este programa añade los valores `10`, `20` y `30` a la pila. Luego muestra su tamaño (`3`), consulta el elemento superior (`30`), lo extrae (`30`) y vuelve a consultar el elemento superior (`20`).
+
+**Resultado:**
+
+```
+Size: 3
+Top: 30
+Pop: 30
+Top: 20
+```
+
 ---
 
 ## 13. Ejemplo completo
