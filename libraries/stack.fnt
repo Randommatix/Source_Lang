@@ -1,0 +1,132 @@
+#!import string
+
+* stack {
+    top = 0
+
+    * push(value) {
+        if top == 0:
+            item_0 = value
+            top = 1
+            return true
+        elif top == 1:
+            item_1 = value
+            top = 2
+            return true
+        elif top == 2:
+            item_2 = value
+            top = 3
+            return true
+        elif top == 3:
+            item_3 = value
+            top = 4
+            return true
+        elif top == 4:
+            item_4 = value
+            top = 5
+            return true
+        elif top == 5:
+            item_5 = value
+            top = 6
+            return true
+        elif top == 6:
+            item_6 = value
+            top = 7
+            return true
+        elif top == 7:
+            item_7 = value
+            top = 8
+            return true
+        elif top == 8:
+            item_8 = value
+            top = 9
+            return true
+        elif top == 9:
+            item_9 = value
+            top = 10
+            return true
+
+        return false
+    }
+
+    * pop() {
+        if top == 10:
+            top = 9
+            return item_9
+        elif top == 9:
+            top = 8
+            return item_8
+        elif top == 8:
+            top = 7
+            return item_7
+        elif top == 7:
+            top = 6
+            return item_6
+        elif top == 6:
+            top = 5
+            return item_5
+        elif top == 5:
+            top = 4
+            return item_4
+        elif top == 4:
+            top = 3
+            return item_3
+        elif top == 3:
+            top = 2
+            return item_2
+        elif top == 2:
+            top = 1
+            return item_1
+        elif top == 1:
+            top = 0
+            return item_0
+
+        return None
+    }
+
+    * peek() {
+        if top == 10:
+            return item_9
+        elif top == 9:
+            return item_8
+        elif top == 8:
+            return item_7
+        elif top == 7:
+            return item_6
+        elif top == 6:
+            return item_5
+        elif top == 5:
+            return item_4
+        elif top == 4:
+            return item_3
+        elif top == 3:
+            return item_2
+        elif top == 2:
+            return item_1
+        elif top == 1:
+            return item_0
+
+        return None
+    }
+
+    * size() {
+        return top
+    }
+
+    * is_empty() {
+        return top == 0
+    }
+
+    expose("push")
+    expose("pop")
+    expose("peek")
+    expose("size")
+    expose("is_empty")
+}
+
+(string, stack) main() {
+    stack.push(10)
+    stack.push(20)
+    stack.push(30)
+
+    return "Size: " + str(stack.size()) + "\nTop: " + str(stack.peek()) + "\nPop: " + str(stack.pop()) + "\nTop: " + str(stack.peek())
+}
